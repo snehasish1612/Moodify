@@ -1,3 +1,8 @@
+// CHANGE THIS WHEN SWITCHING ENVIRONMENTS
+const API_BASE_URL = "https://moodify-production-136a.up.railway.app";
+// const API_BASE_URL = "http://localhost:9090"; // for local testing
+
+
 // Mood
 const moodOptions = document.querySelectorAll(".mood-option");
 let selectedMood = "";
@@ -51,7 +56,7 @@ generateButton.addEventListener("click", () => {
   generateButton.disabled = true;
   generateButton.innerText = "Generating...";
 
-  fetch("http://localhost:9090/api/generate", {
+  fetch(`${API_BASE_URL}/api/generate`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
@@ -120,7 +125,7 @@ generateButton.addEventListener("click", () => {
       console.error(error);
       // Try a backend mock fallback so the UI remains testable while Gemini is down
       try {
-        const fallbackResp = await fetch("http://localhost:9090/api/mock", {
+        const fallbackResp = await fetch(`${API_BASE_URL}/api/mock`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ mood: selectedMood, era: selectedEra, language: selectedLanguage, feeling: feeling })
