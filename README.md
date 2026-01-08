@@ -35,7 +35,7 @@ It combines a modern **Bootstrap frontend** with a **Spring Boot backend**, powe
 - HTML5  
 - CSS3  
 - Bootstrap 5  
-- JavaScript (Vanilla)  
+- JavaScript  
 - AOS (Animate on Scroll)
 
 ### Backend
