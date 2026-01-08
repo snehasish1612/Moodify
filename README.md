@@ -9,7 +9,7 @@ It combines a modern **Bootstrap frontend** with a **Spring Boot backend**, powe
 
 ## 🚀 Live Demo
 
-- **Frontend (Netlify)**: https://moodify.netlify.app  
+- **Frontend (Netlify)**: https://moodify-snehasish.netlify.app/ 
 - **Backend (Railway)**: https://moodify-production-136a.up.railway.app
 
 > ⚠️ Backend runs on Railway trial credits and may sleep or stop after credits expire.
