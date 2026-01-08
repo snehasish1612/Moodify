@@ -1,0 +1,319 @@
+html, body {
+  overflow-x: hidden;
+}
+
+
+body {
+  background-color: #121212;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+.text-gradient {
+    background: linear-gradient(45deg, #e91e63, #9c27b0);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+.navbar[data-bs-theme="dark"] .nav-link:hover {
+    background: linear-gradient(45deg, #e91e63, #9c27b0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    display: inline-block;
+    background-color: transparent !important;
+}
+
+.navbar[data-bs-theme="dark"] .nav-link.active {
+    color: #e91e63 !important;
+    font-weight: bold;
+    border-bottom: 2px solid #e91e63;
+}
+
+.navbar .nav-link {
+    transition: color 0.3s ease, background 0.3s ease;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, #ffffff, #eec2f5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.intro h2 {
+  letter-spacing: 1px;
+}
+
+.intro p.lead {
+  font-size: 1.25rem;
+  opacity: 0.9;
+}
+
+.language-option,.era-option, .mood-option {
+  background-color: #1e1e1e;
+  color: #fff;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.language-option:hover, .era-option:hover, .mood-option:hover {
+  border-color: #00bcd4;
+  background-color: #2a2a2a;
+}
+
+/* More specific selector to override Bootstrap card styles and ensure visual emphasis */
+.card.language-option.selected, .card.era-option.selected, .card.mood-option.selected {
+  border: 2px solid #00bcd4;
+  background-color: #263238;
+  box-shadow: 0 0 15px rgba(0, 188, 212, 0.5);
+  position: relative;
+  z-index: 2;
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.language-option .display-4 {
+  font-size: 2.5rem;
+  color: #00bcd4;
+}
+
+.language-option .label {
+  font-size: 0.8rem;
+  color: #ccc;
+}
+
+#feelingInput::placeholder {
+    color: #bbb;
+    opacity: 0.8;
+    font-size: 0.95rem;
+}
+
+/* Modal styles to match dark theme and app accents */
+.modal-content.bg-dark {
+  background: linear-gradient(180deg, rgba(18,18,18,0.98), #0f0f0f);
+  color: #ffffff;
+  border-radius: 12px;
+  border: 1px solid rgba(0,188,212,0.08);
+  box-shadow: 0 10px 40px rgba(0,188,212,0.06), 0 2px 10px rgba(0,0,0,0.6);
+  overflow: hidden;
+}
+
+/* Subtle top accent bar using your gradient palette */
+.modal-header {
+  position: relative;
+  padding-bottom: 1rem;
+  border-bottom: none;
+}
+.modal-header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #e91e63, #9c27b0, #00bcd4);
+  opacity: 0.95;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+/* Gradient title text */
+.modal-header .modal-title {
+  background: linear-gradient(45deg, #e91e63, #9c27b0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.btn-close-white {
+  filter: invert(1) grayscale(1) brightness(2);
+  opacity: 0.95;
+}
+
+/* Accent button that matches the teal/cyan palette */
+.btn-accent {
+  background: linear-gradient(90deg,#00bcd4,#00e5ff);
+  color: #001e22;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0,188,212,0.18);
+  transition: transform .12s ease, box-shadow .12s ease, opacity .12s ease;
+}
+.btn-accent:hover, .btn-accent:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0,188,212,0.25);
+  opacity: 0.98;
+}
+
+/* Links and texts inside modal */
+.modal-body a { color: #00bcd4; text-decoration: underline; }
+.modal-body p, .modal-body li { color: #d1d1d1; line-height: 1.6; }
+.modal-body ul { padding-left: 1.2rem; }
+.modal-body ul li::marker { color: #00bcd4; }
+
+/* Darker backdrop with light blur */
+.modal-backdrop.show { background-color: rgba(0,0,0,0.72); backdrop-filter: blur(2px); }
+
+
+
+
+
+/* ===============================
+   Moodify Results Section Styling
+   =============================== */
+
+#results-section {
+  margin-top: 40px;
+}
+
+#results-section h4 {
+  color: #00e5ff;
+  text-shadow: 0 0 10px rgba(0, 229, 255, 0.6);
+  margin-bottom: 20px;
+}
+
+.moodify-results {
+  background: transparent;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Individual song item */
+.moodify-item {
+  background: rgba(30, 30, 30, 0.9);
+  color: #ffffff;
+  border: 1px solid rgba(0, 229, 255, 0.3);
+  padding: 15px 20px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+/* Remove Bootstrap white background */
+.moodify-item.list-group-item {
+  background-color: rgba(30, 30, 30, 0.9);
+}
+
+/* Hover glow effect */
+.moodify-item:hover {
+  background: rgba(0, 229, 255, 0.08);
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Rounded corners for first & last */
+.moodify-item:first-child {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.moodify-item:last-child {
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  border: 1px solid rgba(0, 229, 255, 0.25);
+  box-shadow: 0 0 25px rgba(0, 229, 255, 0.15);
+}
+
+.song-link {
+  color: #00e5ff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.song-link:hover {
+  text-decoration: underline;
+  color: #1de9b6;
+}
+
+/* Grid layout for recommendations (flex-based to allow centered last row)
+   Top row will show up to 3 cards; if there are 5 cards, bottom row will have 2 centered */
+.moodify-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center; /* centers incomplete last row */
+  align-items: stretch;
+}
+
+.song-card {
+  background: rgba(30, 30, 30, 0.92);
+  border: 1px solid rgba(0, 229, 255, 0.12);
+  padding: 16px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100px;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  /* Default: aim for 3 columns on wide screens */
+  flex: 0 0 calc((100% - 32px) / 3);
+  max-width: 360px;
+}
+
+.song-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(0, 229, 255, 0.12);
+}
+
+/* Responsive: 2 columns on medium screens */
+@media (max-width: 992px) {
+  .song-card { flex: 0 0 calc((100% - 16px) / 2); max-width: 48rem; }
+}
+
+/* Mobile: 1 column */
+@media (max-width: 576px) {
+  .song-card { flex: 0 0 100%; max-width: 100%; }
+}
+.song-title {
+  color: #00e5ff;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.song-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.song-actions a {
+  text-decoration: none;
+}
+
+.btn-yt {
+  background: linear-gradient(90deg,#FF0000,#ff6b6b);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-weight: 600;
+  border: none;
+}
+
+.btn-spotify {
+  background: linear-gradient(90deg,#1DB954,#1ED760);
+  color: #00221a;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-weight: 600;
+  border: none;
+}
+
+.btn-yt:hover, .btn-spotify:hover {
+  filter: brightness(1.05);
+}
+
+
